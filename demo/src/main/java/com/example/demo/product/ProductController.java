@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v1/product")
+@RequestMapping("api/v1/products")
 public class ProductController {
 
     private final ProductService productService;
@@ -18,12 +18,12 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @PostMapping("save")
+    @PostMapping("/")
     public Product saveProduct(@RequestBody Product product) {
         return productService.saveProduct(product);
     }
 
-    @GetMapping("get")
+    @GetMapping("/")
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
